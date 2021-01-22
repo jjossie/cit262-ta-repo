@@ -1,7 +1,7 @@
 const rp = require('request-promise-native');
 const config = require('config');
 
-const homeUrl = config.get('constellation-url');
+const homeUrl = config.get('easyrent-url');
 
 it(`Testing to see if ${homeUrl} is up`, async () =>{
     

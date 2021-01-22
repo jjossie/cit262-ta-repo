@@ -1,20 +1,29 @@
 const rp = require('request-promise-native');
 const config = require('config');
 
-const newUserUrl = config.get('constellation-url') + '/account/register';
-console.log(newUserUrl);
+const reservationsUrl = config.get('easyrent-url') + '/reservations';
+// console.log(reservationsUrl);
 
-it(`Testing to see if ${newUserUrl} is up`, async () => {
+it(`Testing to see if ${reservationsUrl} is up`, async () => {
     const date = new Date();
     let options = {
         method: 'POST',
-        uri: newUserUrl,
+        uri: reservationsUrl,
         headers: {
         },
-        formData: {
-            'Email': `testUser${date.getTime()}@email.com`,
-            'Password': 'Passw0rd_',
-            'ConfirmPassword': 'Passw0rd_'
+        raw: {
+            "customerId": "4394924942",
+            "reservationItems": [
+                {
+                    "description": "Snowshoes",
+                    "itemId": 4949495
+                },
+                {
+                    "description": "Big ol yeezy coat",
+                    "itemId": 4949496
+                }
+            ],
+            "dueDate": 1610148694320,
         },
         simple: false,
     };
