@@ -6,7 +6,7 @@ it('Testing to see if ${reservationsUrl} is up', async () =>{
     
     var options = {
         method: "GET", 
-        uri: reservationsUrl,
+        uri: reservationsUrl + 'a8499162-8ce3-4dd9-a1f0-0334ab975b7e',
         // Project
         headers:{
         },

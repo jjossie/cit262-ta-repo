@@ -2,10 +2,8 @@ const rp = require('request-promise-native');
 const config = require('config');
 
 const reservationsUrl = config.get('easyrent-url') + '/reservations';
-// console.log(reservationsUrl);
 
-it(`Testing to see if ${reservationsUrl} is up`, async () => {
-    const date = new Date();
+it(`Attempting to create a new reservation`, async () => {
     let options = {
         method: 'POST',
         uri: reservationsUrl,

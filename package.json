@@ -10,5 +10,8 @@
         "cross-env": "^7.0.2",
         "jest": "^26.1.0",
         "request-promise-native": "^1.0.8"
+    },
+    "devDependencies": {
+        "eslint": "^7.19.0"
     }
 }
