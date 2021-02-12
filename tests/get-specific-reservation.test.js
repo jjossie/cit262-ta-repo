@@ -2,7 +2,7 @@ const rp = require('request-promise-native');
 const config = require('config');
 
 const reservationsUrl = config.get('easyrent-url')+'/reservations';
-
+/*
 // Create Reservation First
 // Declare Options for the HTTP request
 let postMakeReservation = {
@@ -26,12 +26,13 @@ let postMakeReservation = {
     },
     simple: false,
 };
-
+*/
 it('Trying to get reservation at ${reservationsUrl}', async () =>{
     
     // Make the Reservation and get its ID
-    var reservationId = await rp(postMakeReservation);
-    console.log(reservationId);
+    // var reservationId = await rp(postMakeReservation);
+    var reservationId = "04ee4d31-0223-48fe-8174-0c48928b1054";
+    // console.log(reservationId);
     // Declare options to get the reservation
     var options = {
         method: "GET", 
