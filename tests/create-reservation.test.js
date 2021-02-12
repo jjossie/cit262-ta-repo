@@ -10,10 +10,10 @@ it(`Attempting to create a new reservation`, async () => {
         headers: {
         },
         raw: {
-            "customerId": "4394924942",
+            "customerId": "sam.test@test.com",
             "reservationItems": [
                 {
-                    "description": "Snowshoes",
+                    "description": "Gucci Belt",
                     "itemId": 4949495
                 },
                 {
@@ -21,7 +21,7 @@ it(`Attempting to create a new reservation`, async () => {
                     "itemId": 4949496
                 }
             ],
-            "dueDate": 1610148694320,
+            "dueDate": 1610148694320
         },
         simple: false,
     };

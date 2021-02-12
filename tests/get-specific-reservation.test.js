@@ -2,12 +2,40 @@ const rp = require('request-promise-native');
 const config = require('config');
 
 const reservationsUrl = config.get('easyrent-url')+'/reservations';
-it('Testing to see if ${reservationsUrl} is up', async () =>{
+
+// Create Reservation First
+// Declare Options for the HTTP request
+let postMakeReservation = {
+    method: 'POST',
+    uri: reservationsUrl,
+    headers: {
+    },
+    raw: {
+        "customerId": "sam.test@test.com",
+        "reservationItems": [
+            {
+                "description": "Gucci Belt",
+                "itemId": 4949495
+            },
+            {
+                "description": "Big ol yeezy coat",
+                "itemId": 4949496
+            }
+        ],
+        "dueDate": 1610148694320
+    },
+    simple: false,
+};
+
+it('Trying to get reservation at ${reservationsUrl}', async () =>{
     
+    // Make the Reservation and get its ID
+    var reservationId = await rp(postMakeReservation);
+    console.log(reservationId);
+    // Declare options to get the reservation
     var options = {
         method: "GET", 
-        uri: reservationsUrl + 'a8499162-8ce3-4dd9-a1f0-0334ab975b7e',
-        // Project
+        uri: reservationsUrl + '/' + reservationId,
         headers:{
         },
     };
