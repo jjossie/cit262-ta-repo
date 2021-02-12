@@ -27,7 +27,8 @@ let postMakeReservation = {
     simple: false,
 };
 */
-it('Trying to get reservation at ${reservationsUrl}', async () =>{
+
+it(`Trying to get reservation at ${reservationsUrl}`, async () =>{
     
     // Make the Reservation and get its ID
     // var reservationId = await rp(postMakeReservation);
